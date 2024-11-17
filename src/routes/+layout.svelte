@@ -11,6 +11,15 @@
   clientStore.value = useConvexClient();
 </script>
 
-<main class="min-h-dvh flex flex-col items-center justify-center">
+<main>
   {@render children()}
 </main>
+
+<style>
+  main {
+    min-height: 100dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+</style>

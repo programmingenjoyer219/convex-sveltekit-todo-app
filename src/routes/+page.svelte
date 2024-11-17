@@ -8,7 +8,7 @@
   const getTasksQuery = useQuery(api.tasks.getTasks, {});
 </script>
 
-<div class="container mx-auto max-w-4xl">
+<div>
   {#if getTasksQuery.isLoading}
     <p>Loading...</p>
   {:else if getTasksQuery.error}
@@ -18,21 +18,16 @@
   {:else}
     <CreateNewTask />
 
-    <ul class="space-y-3">
+    <ul>
       {#each getTasksQuery.data as task (task._id)}
-        <li class="grid grid-cols-3 gap-1">
+        <li>
           <input
             type="checkbox"
             checked={task.isCompleted}
             onchange={() => editTask(task._id)}
-            class="size-6"
           />
           <span>{task.text}</span>
-          <button
-            onclick={() => deleteTask(task._id)}
-            class="bg-red-400 text-gray-50 p-1 rounded-md"
-            >delete
-          </button>
+          <button onclick={() => deleteTask(task._id)}>delete</button>
         </li>
       {/each}
     </ul>
