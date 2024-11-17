@@ -5,8 +5,6 @@
   import CreateNewTask from "$lib/components/CreateNewTask.svelte";
 
   const getTasksQuery = useQuery(api.tasks.getTasks, {});
-
-  let newTask = $state("");
 </script>
 
 <div class="container mx-auto max-w-4xl">
@@ -17,7 +15,7 @@
       failed to load: {getTasksQuery.error.toString()}
     </p>
   {:else}
-    <CreateNewTask bind:newTask />
+    <CreateNewTask />
 
     <ul class="space-y-3">
       {#each getTasksQuery.data as task (task._id)}

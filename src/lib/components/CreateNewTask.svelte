@@ -1,11 +1,7 @@
 <script lang="ts">
   import { addTask } from "$lib/db/index.js";
 
-  interface Props {
-    newTask: string;
-  }
-
-  let { newTask = $bindable("") }: Props = $props();
+  let newTask = $state("");
 
   function handleSubmit(event: Event) {
     event.preventDefault();
