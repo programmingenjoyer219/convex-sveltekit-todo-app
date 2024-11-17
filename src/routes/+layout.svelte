@@ -5,9 +5,9 @@
   import { useConvexClient } from "convex-svelte";
 
   const { children } = $props();
-
+  // Set up Convex
   setupConvex(PUBLIC_CONVEX_URL);
-
+  // Initialize clientStore: It will be used to perform mutations
   clientStore.value = useConvexClient();
 </script>
 

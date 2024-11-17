@@ -4,6 +4,7 @@
   import { deleteTask, editTask } from "$lib/db/index.js";
   import CreateNewTask from "$lib/components/CreateNewTask.svelte";
 
+  // Query to fetch tasks from database
   const getTasksQuery = useQuery(api.tasks.getTasks, {});
 </script>
 
