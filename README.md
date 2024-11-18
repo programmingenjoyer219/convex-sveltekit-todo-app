@@ -281,7 +281,7 @@ Render tasks in the UI:
 Run the following command:
 
 ```bash
-npx run dev
+npm run dev
 ```
 
 Start the app, open http://localhost:5173 in a browser, and see the list of tasks.
